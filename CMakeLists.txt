@@ -13,6 +13,9 @@ set (GFLAGS_CMAKE_ARGS
      -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}/gflags # set the install prefix per generator
      -DCMAKE_DEBUG_POSTFIX=d # add a debug postfix to the debug libs so we can install them with the release ones
      -DBUILD_SHARED_LIBS=OFF # build static libs       
+	 -DBUILD_STATIC_LIBS=ON # really really build static libs
+	 -DBUILD_TESTING=OFF
+	 -DINSTALL_HEADERS=ON
      )
 
 ExternalProject_Add ( gflags 
@@ -26,8 +29,11 @@ set(GFLAGS_DIR ${CMAKE_INSTALL_PREFIX}/gflags/CMake)
 set (GLOG_CMAKE_ARGS 
      -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}/glog # set the install prefix per generator     
      -DBUILD_SHARED_LIBS=OFF # build static libs  
+	 -DBUILD_STATIC_LIBS=ON # really really build static libs
      -DCMAKE_DEBUG_POSTFIX=d # add a debug postfix to the debug libs so we can install them with the release ones
-     -Dgflags_DIR=${CMAKE_INSTALL_PREFIX}/gflags/CMake
+	 -DBUILD_TESTING=OFF
+	 -DINSTALL_HEADERS=ON
+	 -Dgflags_DIR=${CMAKE_INSTALL_PREFIX}/gflags/CMake
      )
 
 ExternalProject_Add ( glog 
@@ -102,7 +108,7 @@ ExternalProject_Add ( snappy
 set(SNAPPY_ROOT_DIR ${CMAKE_INSTALL_PREFIX}/snappy)
 
 add_subdirectory(opencv)
-set(OpenCV_DIR ${CMAKE_INSTALL_ PREFIX}/OpenCV)
+set(OpenCV_DIR ${CMAKE_INSTALL_PREFIX}/OpenCV)
 
 add_subdirectory(hdf5)
 

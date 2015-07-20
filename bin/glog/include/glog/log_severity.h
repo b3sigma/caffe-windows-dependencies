@@ -36,7 +36,8 @@
 
 // Annoying stuff for windows -- makes sure clients can import these functions
 #ifndef GOOGLE_GLOG_DLL_DECL
-# if defined(_WIN32) && !defined(__CYGWIN__)
+// default to static linking 
+# if defined(_WIN32) && !defined(__CYGWIN__) && defined(DLL_DYNAMIC_LINKING)
 #   define GOOGLE_GLOG_DLL_DECL  __declspec(dllimport)
 # else
 #   define GOOGLE_GLOG_DLL_DECL
