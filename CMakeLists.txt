@@ -15,7 +15,6 @@ set (GFLAGS_CMAKE_ARGS
      -DBUILD_SHARED_LIBS=OFF # build static libs       
 	 -DBUILD_STATIC_LIBS=ON # really really build static libs
 	 -DBUILD_TESTING=OFF
-	 -DINSTALL_HEADERS=ON
      )
 
 ExternalProject_Add ( gflags 
@@ -24,6 +23,9 @@ ExternalProject_Add ( gflags
                     )
 
 set(GFLAGS_DIR ${CMAKE_INSTALL_PREFIX}/gflags/CMake)
+set(GFLAGS_INCLUDE_DIR ${CMAKE_INSTALL_PREFIX}/gflags/Include)
+set(GFLAGS_LIBRARY_RELEASE ${CMAKE_INSTALL_PREFIX}/gflags/Lib/gflags.lib)
+set(GFLAGS_LIBRARY_DEBUG ${CMAKE_INSTALL_PREFIX}/gflags/Lib/gflagsd.lib)
 
 # glog
 set (GLOG_CMAKE_ARGS 
@@ -32,7 +34,6 @@ set (GLOG_CMAKE_ARGS
 	 -DBUILD_STATIC_LIBS=ON # really really build static libs
      -DCMAKE_DEBUG_POSTFIX=d # add a debug postfix to the debug libs so we can install them with the release ones
 	 -DBUILD_TESTING=OFF
-	 -DINSTALL_HEADERS=ON
 	 -Dgflags_DIR=${CMAKE_INSTALL_PREFIX}/gflags/CMake
      )
 

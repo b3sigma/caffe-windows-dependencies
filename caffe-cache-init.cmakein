@@ -5,7 +5,10 @@ set(GFLAGS_DIR                   "@GFLAGS_DIR@"                   CACHE PATH "gf
 set(gflags_DIR                   "${GFLAGS_DIR}"                  CACHE PATH "gflags library directory")
 set(Gflags_DIR                   "${GFLAGS_DIR}"                  CACHE PATH "gflags library directory")
 set(gflags_SHARED                OFF                              CACHE PATH "use static gflags library")
-                                                                  
+set(GFLAGS_INCLUDE_DIR           "@GFLAGS_INCLUDE_DIR@"           CACHE PATH "gflags include directory")
+set(GFLAGS_LIBRARY_RELEASE       "@GFLAGS_LIBRARY_RELEASE@"       CACHE PATH "gflags release library")
+set(GFLAGS_LIBRARY_DEBUG         "@GFLAGS_LIBRARY_DEBUG@"         CACHE PATH "gflags debug library")
+											 
 set(GLOG_INCLUDE_DIR             "@GLOG_INCLUDE_DIR@"             CACHE PATH "glog library include directory")
 set(GLOG_LIBRARY_RELEASE         "@GLOG_LIBRARY_RELEASE@"         CACHE PATH "glog release library")
 set(GLOG_LIBRARY_DEBUG           "@GLOG_LIBRARY_DEBUG@"           CACHE PATH "glog debug library")
